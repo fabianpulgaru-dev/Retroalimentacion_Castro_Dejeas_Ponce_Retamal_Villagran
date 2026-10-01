@@ -1,243 +1,39 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Retroalimentación formativa · Valentina Castro, Carolaine Dejeas, Alejandra Ponce, Tiare Retamal y Valentina Villagrán</title><style>
-:root{
-  --bg:#f7f7fb;--ink:#24233a;--muted:#6f7080;--card:#fff;--primary:#6e46b4;
-  --green:#adc749;--mustard:#ecc759;--line:#e7e3ef;--soft-purple:#f1ecfb;
-  --soft-green:#f2f7df;--soft-mustard:#fff8dc;--soft-red:#fff4f4;--shadow:0 12px 35px rgba(38,24,69,.08);
-}
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  color:var(--ink);background:radial-gradient(circle at top left,rgba(110,70,180,.08),transparent 34%),
-  radial-gradient(circle at top right,rgba(173,199,73,.10),transparent 26%),var(--bg);line-height:1.6}
-.wrap{max-width:1180px;margin:auto;padding:28px 20px 80px}
-.hero{background:linear-gradient(135deg,#5f3ba1,#7b52bc 60%,#8f69c9);color:#fff;border-radius:28px;padding:34px;
-  box-shadow:var(--shadow);position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08);right:-80px;top:-80px}
-.eyebrow{display:inline-flex;align-items:center;padding:7px 11px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);
-  border-radius:999px;font-size:.82rem;font-weight:700}
-h1{margin:14px 0 8px;font-size:clamp(2rem,5vw,3.4rem);line-height:1.05}
-.hero p{max-width:850px;margin:0;color:rgba(255,255,255,.92)}
-.hero-meta{margin-top:24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.metric{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:15px 16px}
-.metric small{display:block;opacity:.82;font-weight:600}.metric strong{display:block;font-size:1.35rem;margin-top:2px}
-.section{margin-top:28px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
-.intro-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.highlight{border-left:5px solid var(--green);background:var(--soft-green)}
-.note{background:var(--soft-mustard);border:1px solid #f0dea2}
-.section-title{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px}.section-title h2{margin:0;font-size:1.5rem}
-.section-title p{margin:0;color:var(--muted);font-size:.94rem}
-.rubric{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.mini{border:1px solid var(--line);background:white;border-radius:16px;padding:14px}
-.mini strong{font-size:1.18rem}.mini span{display:block;color:var(--muted);font-size:.82rem;margin-top:3px}
-.ok{border-top:5px solid var(--green)}.mid{border-top:5px solid var(--mustard)}
-.route{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.route button{appearance:none;border:none;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;text-align:left;cursor:pointer;
-  box-shadow:var(--shadow);transition:.2s transform,.2s border-color,.2s background;color:inherit}
-.route button:hover{transform:translateY(-2px);border-color:#cfc0eb}.route button.active{background:var(--soft-purple);border-color:#b59ddf}
-.route-num{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--primary);color:white;font-weight:800;margin-bottom:10px}
-.route button strong{display:block;font-size:.98rem}.route button span{display:block;color:var(--muted);font-size:.86rem;margin-top:4px}
-.challenge{display:none;margin-top:18px}.challenge.active{display:block}
-.challenge-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:18px}.challenge-head h3{font-size:1.5rem;margin:0}
-.tag{white-space:nowrap;background:var(--soft-purple);color:var(--primary);padding:7px 11px;border-radius:999px;font-size:.82rem;font-weight:800}
-.feedback-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.feedback-box{border-radius:18px;padding:18px;border:1px solid var(--line);background:#fff}.feedback-box h4{margin:0 0 9px;font-size:1rem}
-.feedback-box p{margin:0;color:#454456}.original{background:var(--soft-red);border-color:#f0c7c7}.why{background:#f8f5ff;border-color:#dacdf1}
-.how{background:#f4f8e6;border-color:#dce8b1}.example{background:#fff9e8;border-color:#f0df9e}
-blockquote{margin:10px 0 0;padding:14px 16px;border-left:4px solid #d76767;background:white;border-radius:12px;font-size:.95rem}
-.example blockquote{border-left-color:var(--mustard)} .how ol{margin:8px 0 0;padding-left:20px}.how li{margin:5px 0}
-.closing{background:linear-gradient(135deg,#fff,#f6f2ff);border:1px solid #ded4ef}
-@media(max-width:900px){.hero-meta,.route,.rubric{grid-template-columns:repeat(2,minmax(0,1fr))}.intro-grid,.feedback-grid{grid-template-columns:1fr}}
-@media(max-width:560px){.hero{padding:24px}.hero-meta,.route,.rubric{grid-template-columns:1fr}.wrap{padding:16px 12px 70px}}
-</style></head><body><div class="wrap">
-    <section class="hero">
-      <div class="eyebrow">✦ Expresión Escrita II · Retroalimentación formativa</div>
-      <h1>Ruta de mejora</h1>
-      <p><strong>Valentina Castro, Carolaine Dejeas, Alejandra Ponce, Tiare Retamal y Valentina Villagrán</strong><br>La educación inicial como garantía de equidad: análisis de los efectos en el desarrollo socioemocional por la ausencia de educación inicial</p>
-      <div class="hero-meta">
-        <div class="metric"><small>Puntaje actual</small><strong>34 / 40</strong></div>
-        <div class="metric"><small>Nota actual</small><strong>5,5</strong></div>
-        <div class="metric"><small>Exigencia</small><strong>70%</strong></div>
-      </div>
-    </section>
-
-    <section class="section intro-grid">
-      <div class="card highlight"><h3>Lo que ya lograron</h3><p>El trabajo construye una problemática pertinente, incorpora normativa y antecedentes y desarrolla razones reconocibles para justificar la investigación. Hay una lógica investigativa clara. El principal desafío está en fortalecer la cautela del lenguaje y mejorar algunas construcciones oracionales.</p></div>
-      <div class="card note"><h3>¿Cómo usar esta retroalimentación?</h3>
-        <p>Primero revisen el fragmento real de su trabajo. Luego observen por qué necesita mejora, qué operación pueden aplicar y finalmente miren el ejemplo paralelo. Los cambios deben realizarse directamente en su documento Word.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-title"><div><h2>Evaluación, en una mirada</h2><p>La nota se calcula sobre 40 puntos con 70% de exigencia.</p></div></div>
-      <div class="rubric"><div class="mini ok"><strong>4/4</strong><span>Pertinencia y actualidad</span></div><div class="mini ok"><strong>4/4</strong><span>Construcción del título</span></div><div class="mini ok"><strong>4/4</strong><span>Construcción de la introducción</span></div><div class="mini ok"><strong>4/4</strong><span>Construcción de la justificación</span></div><div class="mini mid"><strong>2/4</strong><span>Uso de fuentes y APA 7</span></div><div class="mini ok"><strong>4/4</strong><span>Recursos lingüísticos</span></div><div class="mini mid"><strong>2/4</strong><span>Lenguaje académico</span></div><div class="mini mid"><strong>2/4</strong><span>Gramática y puntuación</span></div><div class="mini ok"><strong>4/4</strong><span>Construcción de párrafos</span></div><div class="mini ok"><strong>4/4</strong><span>Aspectos formales</span></div></div>
-    </section>
-
-    <section class="section">
-      <div class="section-title"><div><h2>Focos de retroalimentación</h2><p>Estos son los aspectos que conviene revisar antes de volver a entregar.</p></div></div>
-      <div class="route">
-        <button class="active" data-target="c1">
-          <div class="route-num">1</div>
-          <strong>Afinar la cautela</strong>
-          <span>Evitar afirmaciones demasiado categóricas.</span>
-        </button>
-        <button class="" data-target="c2">
-          <div class="route-num">2</div>
-          <strong>Segmentar oraciones</strong>
-          <span>Una idea principal por oración.</span>
-        </button>
-        <button class="" data-target="c3">
-          <div class="route-num">3</div>
-          <strong>Precisar relaciones</strong>
-          <span>No confundir asociación con causalidad.</span>
-        </button>
-        <button class="" data-target="c4">
-          <div class="route-num">4</div>
-          <strong>Pulir referencias</strong>
-          <span>APA y correspondencia final.</span>
-        </button></div>
-      
-        <div id="c1" class="challenge active">
-          <div class="card">
-            <div class="challenge-head">
-              <div>
-                <h3>1. Distinguir evidencia de valoración personal</h3>
-                <p>El texto presenta argumentos pertinentes, pero algunas formulaciones son más categóricas de lo que las fuentes permiten sostener.</p>
-              </div>
-              <div class="tag">Criterio 7 · 2/4</div>
-            </div>
-            <div class="feedback-grid">
-              <div class="feedback-box original">
-                <h4>🔎 ¿Qué ocurre en el texto?</h4>
-                <p>En algunos fragmentos pasan desde un antecedente a una conclusión fuerte o a una valoración del rol profesional.</p>
-                <p style="margin-top:10px"><strong>Ejemplo de su texto:</strong></p>
-                <blockquote>...las y los educadores de párvulos debemos ser conscientes de la importancia de nuestro rol en su desarrollo integral.</blockquote>
-              </div>
-              <div class="feedback-box why">
-                <h4>🧠 ¿Por qué necesita revisión?</h4>
-                <p>En una investigación conviene formular las conclusiones de acuerdo con el alcance de la evidencia. Expresiones como “debemos”, “es primordial” o afirmaciones absolutas pueden reemplazarse por formulaciones más analíticas.</p>
-              </div>
-              <div class="feedback-box how">
-                <h4>🛠️ ¿Cómo mejorarlo?</h4>
-                <ol><li>Identifiquen expresiones valorativas o exhortativas.</li><li>Pregúntense qué permite sostener realmente la fuente.</li><li>Usen verbos como “sugiere”, “se relaciona con”, “puede contribuir” o “permite considerar”.</li><li>Mantengan tercera persona cuando sea posible.</li></ol>
-              </div>
-              <div class="feedback-box example">
-                <h4>💡 Ejemplo paralelo: Pedagogía en Lenguaje</h4>
-                <p>Este ejemplo modela la operación con otro tema de investigación. No corresponde al contenido de su trabajo.</p>
-                <blockquote>Estos antecedentes permiten considerar que la mediación docente puede influir en las oportunidades de participación oral durante la lectura literaria.</blockquote>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c2" class="challenge">
-          <div class="card">
-            <div class="challenge-head">
-              <div>
-                <h3>2. Revisar oraciones demasiado extensas</h3>
-                <p>Varias ideas pertinentes quedan acumuladas dentro de una misma oración.</p>
-              </div>
-              <div class="tag">Criterio 8 · 2/4</div>
-            </div>
-            <div class="feedback-grid">
-              <div class="feedback-box original">
-                <h4>🔎 ¿Qué ocurre en el texto?</h4>
-                <p>En algunos párrafos una sola oración reúne causa, explicación, consecuencias y valoración.</p>
-                <p style="margin-top:10px"><strong>Ejemplo de su texto:</strong></p>
-                <blockquote>Ante este dilema los autores Gutierrez, S. y Ruiz, M. (2018) tras el análisis de 126 niños en grupos de diversos contextos sociales, han llegado a la conclusión de que...</blockquote>
-              </div>
-              <div class="feedback-box why">
-                <h4>🧠 ¿Por qué necesita revisión?</h4>
-                <p>Cuando la oración concentra demasiadas relaciones, se vuelve más difícil reconocer qué información es evidencia y qué información corresponde a la interpretación del grupo.</p>
-              </div>
-              <div class="feedback-box how">
-                <h4>🛠️ ¿Cómo mejorarlo?</h4>
-                <ol><li>Separen la presentación de la fuente de la interpretación.</li><li>Usen punto seguido cuando cambia la función de la idea.</li><li>Revisen concordancia entre sujeto y verbo.</li><li>Lean cada oración aislada para comprobar si se entiende.</li></ol>
-              </div>
-              <div class="feedback-box example">
-                <h4>💡 Ejemplo paralelo: Pedagogía en Lenguaje</h4>
-                <p>Este ejemplo modela la operación con otro tema de investigación. No corresponde al contenido de su trabajo.</p>
-                <blockquote>Pérez (2023) analizó conversaciones literarias en tres cursos de primero medio. El estudio observó que las preguntas abiertas ampliaban el número de intervenciones. Este antecedente sugiere que la mediación docente puede influir en la distribución de la palabra.</blockquote>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c3" class="challenge">
-          <div class="card">
-            <div class="challenge-head">
-              <div>
-                <h3>3. Revisar cuándo una fuente permite hablar de causa</h3>
-                <p>El texto relaciona ausencia, asistencia y desarrollo socioemocional. Conviene cuidar el tipo de relación que se atribuye a los antecedentes.</p>
-              </div>
-              <div class="tag">Criterio 7 · profundización</div>
-            </div>
-            <div class="feedback-grid">
-              <div class="feedback-box original">
-                <h4>🔎 ¿Qué ocurre en el texto?</h4>
-                <p>Algunas formulaciones presentan una relación directa entre no asistir y no desarrollar determinadas habilidades, aunque los antecedentes citados pueden estar mostrando asociaciones más complejas.</p>
-                <p style="margin-top:10px"><strong>Ejemplo de su texto:</strong></p>
-                <blockquote>...los párvulos no asisten y al no estar en un ambiente pensado y habilitado para ellos no logran desarrollan habilidades esenciales...</blockquote>
-              </div>
-              <div class="feedback-box why">
-                <h4>🧠 ¿Por qué necesita revisión?</h4>
-                <p>Una investigación puede mostrar relación, asociación o influencia sin necesariamente demostrar que un factor sea la causa única de otro.</p>
-              </div>
-              <div class="feedback-box how">
-                <h4>🛠️ ¿Cómo mejorarlo?</h4>
-                <ol><li>Busquen afirmaciones con “provoca”, “no logran” o “es la causa”.</li><li>Revisen si la fuente demuestra causalidad o solo relación.</li><li>Usen formulaciones más cautas cuando corresponda.</li><li>Mantengan visibles otros factores posibles.</li></ol>
-              </div>
-              <div class="feedback-box example">
-                <h4>💡 Ejemplo paralelo: Pedagogía en Lenguaje</h4>
-                <p>Este ejemplo modela la operación con otro tema de investigación. No corresponde al contenido de su trabajo.</p>
-                <blockquote>En lugar de “la poca lectura provoca baja participación”, una formulación más cauta sería: “la frecuencia de lectura puede relacionarse con las oportunidades de participación, aunque intervienen también factores de mediación y contexto”.</blockquote>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c4" class="challenge">
-          <div class="card">
-            <div class="challenge-head">
-              <div>
-                <h3>4. Revisar construcción de referencias</h3>
-                <p>El trabajo utiliza suficientes fuentes, pero la lista final todavía necesita una revisión formal.</p>
-              </div>
-              <div class="tag">Criterio 5 · 2/4</div>
-            </div>
-            <div class="feedback-grid">
-              <div class="feedback-box original">
-                <h4>🔎 ¿Qué ocurre en el texto?</h4>
-                <p>Las referencias permiten identificar las fuentes principales, aunque presentan diferencias de formato y algunos datos incompletos.</p>
-                <p style="margin-top:10px"><strong>Ejemplo de su texto:</strong></p>
-                <blockquote>Ministerio de Educación de Chile. (2018). Bases Curriculares de la Educación Parvularia. Subsecretaría de Educación Parvularia. https://MINEDUC.c</blockquote>
-              </div>
-              <div class="feedback-box why">
-                <h4>🧠 ¿Por qué necesita revisión?</h4>
-                <p>La referencia final debe permitir identificar y recuperar la fuente utilizada. La consistencia formal también ayuda a distinguir autor, fecha, título y procedencia.</p>
-              </div>
-              <div class="feedback-box how">
-                <h4>🛠️ ¿Cómo mejorarlo?</h4>
-                <ol><li>Revisen que cada referencia tenga autor, año, título y fuente.</li><li>Comprueben que los enlaces estén completos.</li><li>Apliquen un mismo formato APA 7 en toda la lista.</li><li>Verifiquen que todas las citas del texto aparezcan al final.</li></ol>
-              </div>
-              <div class="feedback-box example">
-                <h4>💡 Ejemplo paralelo: Pedagogía en Lenguaje</h4>
-                <p>Este ejemplo modela la operación con otro tema de investigación. No corresponde al contenido de su trabajo.</p>
-                <blockquote>Una referencia de un artículo de Lenguaje debe mantener el mismo orden y formato en toda la lista: autoría, año, título del artículo, revista, volumen o número, páginas y DOI o URL si corresponde.</blockquote>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
-
-    <section class="section">
-      <div class="card closing"><h3>Antes de volver a entregar</h3><p>La investigación está bien encaminada. Para subir la nota, concentren la revisión en cómo formulan las afirmaciones, cómo segmentan las oraciones y cómo presentan las referencias. No necesitan cambiar el problema ni reconstruir la justificación desde cero.</p>
-      <p><strong>La meta no es comenzar de nuevo.</strong> La meta es hacer más visible, preciso y claro el razonamiento investigativo que ya construyeron.</p></div>
-    </section>
-    </div>
-    <script>
-    const routeButtons=[...document.querySelectorAll('.route button')];
-    const challenges=[...document.querySelectorAll('.challenge')];
-    routeButtons.forEach(btn=>btn.addEventListener('click',()=>{
-      routeButtons.forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      challenges.forEach(c=>c.classList.remove('active'));
-      const t=document.getElementById(btn.dataset.target);
-      t.classList.add('active');
-      t.scrollIntoView({behavior:'smooth',block:'start'});
-    }));
-    </script></body></html>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Retroalimentación · La educación inicial como garantía de equidad: análisis de los efectos en el desarrollo socioemocional por la ausencia de educación inicial</title><style>
+:root{--bg:#f6f5f8;--paper:#fff;--ink:#272239;--muted:#6f6978;--purple:#6e46b4;--green:#adc749;--mustard:#ecc759;--line:#e6e1eb;--soft:#faf8fc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.62}
+header{background:linear-gradient(135deg,#6e46b4,#845fc4);color:#fff;padding:28px 18px 24px}.wrap{max-width:920px;margin:auto}
+main{max-width:920px;margin:auto;padding:16px 12px 80px}h1{font-size:1.55rem;line-height:1.2;margin:.25rem 0 .5rem}h2{font-size:1.16rem;margin:0 0 .45rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px}.good{border-left:6px solid var(--green)}.focus{border-left:6px solid var(--mustard)}.learn{border-left:6px solid var(--purple)}
+.badges{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}.badge{background:rgba(255,255,255,.16);padding:7px 10px;border-radius:999px;font-size:.82rem;font-weight:800}
+.rubric{display:grid;grid-template-columns:1fr auto;gap:7px 14px}.rubric div{padding:6px 0;border-bottom:1px solid var(--line)}
+.route{display:grid;gap:8px;margin-top:10px}.route button{text-align:left;width:100%;border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px 14px;font:inherit;font-weight:800;cursor:pointer}
+.panel{display:none;margin-top:10px}.panel.open{display:block}.step{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:10px}
+.label{font-size:.76rem;text-transform:uppercase;letter-spacing:.04em;font-weight:900;color:var(--purple);margin-bottom:4px}.quote{font-family:Georgia,"Times New Roman",serif;background:#fff;border-left:4px solid #c8b9e3;padding:10px 12px;border-radius:8px;margin:8px 0}
+.model{display:grid;gap:9px}.before,.after{padding:11px;border-radius:12px;border:1px solid var(--line);background:#fff}.after{background:#f7faec}.todo{background:#fff9e8;border:1px solid #eadca7;border-radius:12px;padding:11px;margin-top:10px}
+.muted{color:var(--muted)}footer{color:var(--muted);font-size:.83rem;margin-top:20px}
+@media(max-width:600px){header{padding:22px 14px}main{padding:12px 9px 70px}.card{padding:14px;border-radius:15px}h1{font-size:1.32rem}}
+</style></head><body>
+<header><div class="wrap"><div style="font-weight:900;font-size:.78rem">EXPRESIÓN ESCRITA II · RETROALIMENTACIÓN FORMATIVA</div><h1>La educación inicial como garantía de equidad: análisis de los efectos en el desarrollo socioemocional por la ausencia de educación inicial</h1><div>Valentina Castro · Carolaine Dejeas · Alejandra Ponce · Tiare Retamal · Valentina Villagrán</div>
+<div class="badges"><span class="badge">34/40 puntos</span><span class="badge">Nota 5,5</span><span class="badge">Exigencia 70%</span></div></div></header>
+<main>
+<section class="card good"><h2>Lo que ya están logrando</h2><p>El trabajo presenta un tema pertinente, una introducción claramente orientada al problema y una justificación extensa que incorpora investigaciones, documentos curriculares y datos recientes. Se reconoce una buena comprensión de la función de la evidencia y una estructura global consistente.</p></section>
+<section class="card focus"><h2>El aprendizaje principal para esta revisión</h2><p>El siguiente aprendizaje consiste en <b>controlar el alcance de las afirmaciones y la construcción de las oraciones</b>. Ustedes tienen contenido y evidencia, pero en algunos pasajes la interpretación se vuelve más categórica de lo que la fuente permite sostener o se mezclan muchas relaciones en una misma oración.</p><p class="muted">La idea no es corregir frases aisladas. Vamos a mirar qué operación de escritura están intentando realizar y cómo pueden controlarla mejor.</p></section>
+<section class="card"><h2>Resultado según la rúbrica</h2><div class="rubric"><div>Pertinencia y actualidad</div><div><b>4/4</b></div><div>Construcción del título</div><div><b>4/4</b></div><div>Construcción de la introducción</div><div><b>4/4</b></div><div>Construcción de la justificación</div><div><b>4/4</b></div><div>Fuentes y APA 7</div><div><b>2/4</b></div><div>Recursos lingüísticos</div><div><b>4/4</b></div><div>Lenguaje académico y cautela</div><div><b>2/4</b></div><div>Gramática y puntuación</div><div><b>2/4</b></div><div>Construcción de párrafos</div><div><b>4/4</b></div><div>Aspectos formales</div><div><b>4/4</b></div></div></section>
+<section class="card learn"><h2>Ruta recomendada para revisar</h2><div class="route"><button data-target="a1">1. Distinguir evidencia, interpretación y valoración</button><div id="a1" class="panel"><div class="step"><div class="label">Qué ya están haciendo bien aquí</div><p>No se limitan a citar. Intentan explicar por qué cada antecedente importa para la educación inicial y para el rol de las educadoras.</p></div><div class="step"><div class="label">Así aparece en su texto</div><div class="quote">Por lo tanto, evidencias como estas nos recuerdan la importancia de la educación inicial, sus impactos positivos en el desarrollo y en cómo las y los educadores de párvulos debemos ser conscientes de la importancia de nuestro rol...</div></div><div class="step"><div class="label">Qué están intentando hacer</div><p>Están cerrando un razonamiento y vinculando la evidencia con la relevancia profesional del tema.</p></div><div class="step"><div class="label">Dónde aparece la dificultad</div><p>La oración pasa desde lo que muestra el estudio a una valoración sobre lo que «debemos» comprender como educadoras. Esa valoración puede ser pertinente, pero no es exactamente una conclusión derivada de la evidencia presentada.</p></div><div class="step"><div class="label">Por qué importa revisarlo</div><p>En escritura académica conviene distinguir qué muestra la fuente, qué interpretación construyen ustedes y qué valoración profesional agregan.</p></div><div class="step"><div class="label">Cómo se hace</div><p>Primero formulen la conclusión que permite la evidencia. Si quieren incorporar una implicancia profesional, preséntenla después como una consecuencia o reflexión claramente diferenciada.</p></div><div class="step model"><div class="label">Modelado · resolvemos solo este caso</div>
+        <div class="before"><b>Antes · en su texto</b><br>Por lo tanto, evidencias como estas nos recuerdan la importancia de la educación inicial... y en cómo las y los educadores... debemos ser conscientes...</div>
+        <div class="after"><b>Después · una posible versión revisada</b><br>Estos antecedentes permiten sostener que las experiencias educativas de la primera infancia se relacionan con oportunidades relevantes para el desarrollo socioemocional. A partir de ello, resulta pertinente considerar el papel que cumplen las y los educadores en la creación de contextos que favorezcan ese desarrollo.</div>
+        <p><b>Qué cambió y para qué:</b> se separó la interpretación de la evidencia de la implicancia profesional.</p></div>
+        <div class="todo"><b>Ahora les toca a ustedes</b><br>Revisen otras expresiones valorativas como «son la base», «es primordial» o «significativamente más relevante» y comprueben si la fuente permite sostener ese grado de certeza.</div></div><button data-target="a2">2. Organizar oraciones con demasiadas relaciones</button><div id="a2" class="panel"><div class="step"><div class="label">Qué ya están haciendo bien aquí</div><p>Las oraciones contienen información relevante y muestran que intentan conectar datos, contexto y consecuencias.</p></div><div class="step"><div class="label">Así aparece en su texto</div><div class="quote">Durante el 2025 se encontró una alza de inasistencia del casi 16% en jardines infantiles, esto ve afectado el rendimiento del párvulo al igual que su desarrollo socioemocional que todavía está en proceso, de la misma manera afecta a las mismas profesional...</div></div><div class="step"><div class="label">Qué están intentando hacer</div><p>Están utilizando un dato de inasistencia y explicando posibles consecuencias.</p></div><div class="step"><div class="label">Dónde aparece la dificultad</div><p>La misma oración presenta el dato, una relación causal con rendimiento, otra con desarrollo socioemocional y otra con las profesionales. Estas relaciones requieren distinto tipo de evidencia y quedan unidas solo por comas.</p></div><div class="step"><div class="label">Por qué importa revisarlo</div><p>Separar oraciones no es solo corregir puntuación. Permite distinguir qué afirmación está respaldada por qué evidencia.</p></div><div class="step"><div class="label">Cómo se hace</div><p>Presenten primero el dato. Luego expliquen una consecuencia por vez y señalen qué fuente permite sostener cada relación.</p></div><div class="step model"><div class="label">Modelado · resolvemos solo este caso</div>
+        <div class="before"><b>Antes · en su texto</b><br>Durante el 2025 se encontró una alza de inasistencia del casi 16%... esto ve afectado el rendimiento... el desarrollo socioemocional... y a las mismas profesional...</div>
+        <div class="after"><b>Después · una posible versión revisada</b><br>Durante 2025 se reportó un aumento cercano al 16 % en la inasistencia a jardines infantiles (Pavisic et al., 2026). Este dato evidencia la magnitud del problema de asistencia. Para sostener sus efectos sobre el rendimiento o el desarrollo socioemocional, es necesario precisar qué resultados reporta específicamente la fuente.</div>
+        <p><b>Qué cambió y para qué:</b> el dato queda separado de las consecuencias que todavía necesitan ser demostradas.</p></div>
+        <div class="todo"><b>Ahora les toca a ustedes</b><br>Apliquen la misma operación al fragmento de Gutiérrez y Ruiz (2018), especialmente a la oración que comienza con «Demostrando como incluso...».</div></div><button data-target="a3">3. Revisar cuándo una fuente permite afirmar causalidad</button><div id="a3" class="panel"><div class="step"><div class="label">Qué ya están haciendo bien aquí</div><p>El texto busca relacionar la ausencia de educación inicial con dimensiones concretas del desarrollo socioemocional y la transición escolar.</p></div><div class="step"><div class="label">Así aparece en su texto</div><div class="quote">...la falta de esta, provoca que el desarrollo de habilidades socioemocionales no logre potenciarse y adaptarse a las necesidades de cada párvulo...</div></div><div class="step"><div class="label">Qué están intentando hacer</div><p>Están formulando la consecuencia central que da sentido al problema de investigación.</p></div><div class="step"><div class="label">Dónde aparece la dificultad</div><p>El verbo «provoca» establece una relación causal fuerte. Para usarlo, la evidencia tendría que demostrar que la ausencia de educación inicial produce directamente ese efecto y controlar otras variables que también pueden intervenir.</p></div><div class="step"><div class="label">Por qué importa revisarlo</div><p>La cautela epistémica permite que el lenguaje refleje con precisión el alcance real de la evidencia.</p></div><div class="step"><div class="label">Cómo se hace</div><p>Si la fuente muestra asociación, diferencias o posibles efectos, utilicen formulaciones como «puede relacionarse con», «podría dificultar» o «se asocia con».</p></div><div class="step model"><div class="label">Modelado · resolvemos solo este caso</div>
+        <div class="before"><b>Antes · en su texto</b><br>La falta de educación inicial provoca que el desarrollo de habilidades socioemocionales no logre potenciarse...</div>
+        <div class="after"><b>Después · una posible versión revisada</b><br>La ausencia de educación inicial podría limitar algunas oportunidades sistemáticas para desarrollar habilidades socioemocionales en contextos educativos.</div>
+        <p><b>Qué cambió y para qué:</b> la afirmación conserva la relevancia del problema, pero evita presentar como causal una relación que necesita mayor demostración.</p></div>
+        <div class="todo"><b>Ahora les toca a ustedes</b><br>Revisen también «no logran desarrollar habilidades esenciales» y las afirmaciones sobre la visión de las familias como causa principal de la inasistencia.</div></div></div></section>
+<section class="card good"><h2>Para seguir avanzando</h2><p>La estructura investigativa está lograda. El trabajo de revisión debe centrarse ahora en la precisión: que cada afirmación diga exactamente lo que la evidencia permite sostener y que la sintaxis ayude a distinguir datos, interpretaciones y consecuencias.</p></section>
+<footer>Retroalimentación formativa · Expresión Escrita II</footer></main>
+<script>document.querySelectorAll('.route button').forEach(btn=>btn.addEventListener('click',()=>{const p=document.getElementById(btn.dataset.target);const o=p.classList.contains('open');document.querySelectorAll('.panel').forEach(x=>x.classList.remove('open'));if(!o)p.classList.add('open')}));</script>
+</body></html>
